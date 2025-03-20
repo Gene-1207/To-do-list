@@ -1,7 +1,6 @@
 #To do list
 def to_do():
-#    with open("To_do.txt","w") as f1 :
-#        f1.write("MY TO DO LIST!! \n")
+
 
         while True:
             print("\nMY TO DO LIST!!")
