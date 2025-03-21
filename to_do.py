@@ -29,7 +29,7 @@ def to_do():
                         print(f"{index}. {task.strip()}")
 
 
-            elif i==3:
+            elif i=="3":
                 with open ("To_do.txt","r") as f1:
                     k=f1.readlines()
                 if not k:
@@ -40,12 +40,13 @@ def to_do():
                     try:
                         j = int(input("Enter task number to mark as complete: ")) - 1
                         if 0 <= j < len(k):
-                            k[j] = k[j].strip() + " \n"
-                            with open("To_do.txt", "w") as f1:
-                                f1.writelines(k)
-                            print("Task marked as completed ")
-                        else:
-                            print("Invalid task number ")
+                                if "[Completed]" not in k[j]:
+                                        k[j] = k[j].strip() + "[Completed]\n"
+                                        with open("To_do.txt", "w") as f1:
+                                                f1.writelines(k)
+                                        print("Task marked as completed ")
+                                else:
+                                        print("Invalid task number ")
                     except ValueError:
                         print("Please enter a valid number ")
 
